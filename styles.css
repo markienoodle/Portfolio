@@ -1,0 +1,451 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900p");
+
+:root {
+  /*COLORS*/
+  --main-color: #111112;
+  --text-color: #ededf1;
+  --gradient: linear-gradient(
+    45deg,
+    #8b0000,
+    #ff8c00,
+    #b8860b,
+    #006400,
+    #00008b,
+    #4b0082,
+    #9400d3
+  );
+
+  /*FONTS*/
+  --title: "Montserrat", sans-serif;
+  --text: "Lora", serif;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/*************HEADER***********/
+
+#navbar {
+  position: fixed;
+  top: 0;
+  height: 75px;
+  width: 100%;
+  background-color: var(--main-color);
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+#navbar a {
+  text-decoration: none;
+}
+
+#name {
+  font-family: var(--title);
+  background: var(--gradient);
+  color: transparent;
+  background-clip: text;
+  color: var(--text-color);
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+#navbar-a {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+#navbar-a a {
+  text-align: center;
+  font-size: 15px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-family: var(--title);
+  font-weight: 100;
+  border-radius: 30px;
+  border: 1px solid var(--text-color);
+  width: 100px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar-a a:hover {
+  background: var(--text-color);
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+  transform: scale(1.12);
+  transition-duration: 0.12s;
+  font-weight: 100;
+  font-size: 15px;
+}
+
+/*************MAIN***********/
+main {
+  background-color: var(--main-color);
+  margin: 0;
+}
+
+/*************HOME***********/
+#welcome-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--gradient);
+  background-size: 250%;
+  animation: gradient-motion infinite 7s alternate;
+}
+
+#greet {
+  font-family: var(--title);
+  font-size: 180px;
+  color: var(--text-color);
+  text-align: center;
+  width: 100%;
+  font-style: italic;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  font-weight: 900;
+  margin: 30px 0;
+}
+#greet::before {
+  content: "";
+  animation: hello 8s infinite;
+}
+
+#intro-name {
+  font-family: var(--title);
+  display: flex;
+  align-items: center;
+  font-size: 60px;
+  color: var(--text-color);
+  height: 100px;
+  padding: 10px;
+  width: 550px;
+  justify-content: center;
+  margin: 0 auto;
+  border: 5px solid var(--text-color);
+  border-radius: 80px;
+}
+
+#welcome-section a {
+  position: relative;
+  bottom: -100px;
+  animation: arrow-bounce alternate ease-in-out 1s infinite;
+}
+
+#arrow {
+  width: 20px;
+  height: 20px;
+  border: 5px solid var(--text-color);
+  transform: rotate(45deg);
+  align-items: baseline;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  border-radius: 5px;
+  position: relative;
+  z-index: 0;
+}
+
+section:not([id="welcome-section"]) {
+  padding: 80px;
+  padding-top: 100px;
+  color: var(--text-color);
+  font-family: var(--title);
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+section h1 {
+  font-size: 50px;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+section hr {
+  height: 6px;
+  width: 100px;
+  border-color: var(--text-color);
+  background-color: var(--text-color);
+  margin-left: 0;
+}
+
+section a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+/*************PROJECT***********/
+#projects {
+  height: 105vh;
+}
+
+#projects-container {
+  display: flex;
+  justify-content: center;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.project-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(350px + 5px);
+  height: calc(470px + 5px);
+  border-radius: 50px;
+  background: var(--gradient);
+  background: var(--text-color);
+  margin: 30px;
+}
+
+.project-tile:hover {
+  background: var(--gradient);
+  background-size: 250%;
+  animation: gradient-motion infinite 4s alternate;
+}
+
+.project-tile:hover {
+  transform: scale(1.04);
+  transition: ease-in-out 0.2s;
+}
+
+.project-tile a {
+  font-size: 25px;
+  text-align: left;
+}
+
+.project-tile div {
+  border-radius: 50px;
+  width: 350px;
+  height: 470px;
+  background-color: var(--main-color);
+  box-sizing: border-box;
+  padding: 20px 30px;
+}
+
+.project-title {
+  height: 3rem;
+  width: 100%;
+  text-align: center;
+}
+
+.project-desc {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  text-align: center;
+  text-indent: 20px;
+}
+
+/*************ABOUT-ME***********/
+#about-me {
+  background: linear-gradient(90deg, var(--main-color) 45%, transparent),
+    url("UST-Pic.jpg");
+  background-position: right;
+  background-size: cover;
+}
+
+#about-me p {
+  animation: fade-in linear;
+  animation-timeline: view();
+}
+
+#about-me p {
+  width: 35%;
+  font-size: 22px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-align: justify;
+  text-indent: 25px;
+}
+
+#about-me span {
+  font-weight: bold;
+}
+
+#ust {
+  background-color: gold;
+  color: var(--main-color);
+  padding: 0 5px;
+}
+
+#java {
+  background-color: #8b0000;
+  padding: 0 5px;
+}
+
+#html {
+  background-color: #aa4201;
+  padding: 0 5px;
+}
+#css {
+  background-color: #0c3e69;
+  padding: 0 5px;
+}
+
+/*************CONTACT***********/
+
+#contact {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+#contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto 0;
+  width: 100%;
+  padding: 20px;
+}
+
+#contact-container h2 {
+  margin-bottom: 10px;
+}
+
+#contact-container p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 5px;
+}
+
+#contact-container p:first-of-type {
+  font-size: 25px;
+}
+
+#contact-container p {
+  margin: 8px;
+}
+
+#logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#contact-container a {
+  font-size: 25px;
+  margin: 15px;
+  width: 30px;
+  height: 30px;
+}
+
+#contact-container a:hover {
+  font-size: 30px;
+  transition: ease-in-out 0.2s;
+}
+
+#contact-container p,
+#contact-container h2,
+#contact-container a {
+  animation: fade-in linear;
+  animation-timeline: view();
+}
+
+@keyframes gradient-motion {
+  0% {
+    background-position: left;
+  }
+
+  100% {
+    background-position: right;
+  }
+}
+
+@keyframes hello {
+  0% {
+    content: "Hello!";
+  }
+
+  10% {
+    content: "Hola!";
+  }
+
+  20% {
+    content: "Bonjour!";
+  }
+
+  30% {
+    content: "Hallo!";
+  }
+
+  40% {
+    content: "Ciao!";
+  }
+
+  50% {
+    content: "你好!";
+  }
+
+  60% {
+    content: "こんにちは!";
+  }
+
+  70% {
+    content: "안녕하세요!";
+  }
+
+  80% {
+    content: "مرحبا!";
+  }
+
+  90% {
+    content: "Olá!";
+  }
+
+  100% {
+    content: "नमस्ते!";
+  }
+}
+
+@keyframes arrow-bounce {
+  0% {
+    bottom: -100px;
+  }
+
+  100% {
+    bottom: -120px;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 720px) {
+  #projects-container {
+    flex-direction: column;
+    height: 200vh;
+  }
+}
